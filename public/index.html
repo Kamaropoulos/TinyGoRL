@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <title>TODO App</title>
+    <title>TinyGoRL | Shorten your URLs with the power of Golang!</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -55,33 +55,6 @@
         </div>
     </div>
 
-    <!-- <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>My urls</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item" v-for="task in urls">
-                            {{ task.name }}
-                            <span class="pull-right">
-                                <button class="btn btn-xs btn-danger" v-on:click="deleteTask($index)">
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </button>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="input-group">
-                        <input type="text" 
-                            class="form-control" 
-                            placeholder="New Task" 
-                            v-on:keyup.enter="createTask"
-                            v-model="newTask.name">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button" v-on:click="createTask">Create</button>
-                        </span>
-                    </div><!-- /input-group -->
-    <!-- </div>
-            </div>
-        </div> -->
     <script>
         new Vue({
             el: 'body',
@@ -120,16 +93,6 @@
                     }).error(function (error) {
                         console.log(error)
                     });
-                },
-
-                deleteTask: function (index) {
-                    // Use the $http client to delete a task by its id
-                    this.$http.delete('/urls/' + this.urls[index].id).success(function (response) {
-                        this.urls.splice(index, 1)
-                        console.log("Task deleted!")
-                    }).error(function (error) {
-                        console.log(error)
-                    })
                 }
             }
         })
