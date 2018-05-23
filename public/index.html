@@ -112,7 +112,7 @@
                     this.$http.put('/urls', this.newURL).success(function (response) {
                         this.newURL.shorturl = response.created
                         this.url = this.newURL
-                        this.fullurl = "http://localhost:8000/" + this.url.shorturl
+                        this.fullurl = window.location.protocol + "//" + window.location.host+ "/" + this.url.shorturl
                         this.sentRequest = true
                         this.newURL = {}
                     }).error(function (error) {
