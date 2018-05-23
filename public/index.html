@@ -32,17 +32,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+        .outer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-title {
+            font-family: 'Indie Flower', cursive;
+            text-align: center;
+            padding: 20px 20px;
+        }
+
+        .tiny-text {
+            font-size: 10px;
+        }
+
+        .try-again {
+            text-align: center;
+            padding: 20px 20px;
+        }
+        
     </style>
 </head>
 
 <body>
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <h1 style="font-family: 'Indie Flower', cursive; text-align: center; padding: 20px 20px;">TinyGoRL</h1>
+    <div class="outer">
+        <h1 class="page-title">TinyGoRL</h1>
         <div v-if="!sentRequest" class="input-group">
             <input type="text" class="form-control" placeholder="Enter your long ass URL here :P" v-on:keyup.enter="createTask" v-model="newURL.url">
             <span class="input-group-btn">
                 <button class="btn btn-primary" type="button" v-on:click="createURL">Make it
-                    <span style="font-size: 10px">tiny</span>
+                    <span class="tiny-text">tiny</span>
                 </button>
             </span>
         </div>
@@ -52,7 +75,7 @@
                 <button class="btn btn-info" type="button" onclick="copyLink()">Copy link</button>
             </span>
         </div>
-        <div style="text-align: center; padding: 20px 20px;">
+        <div class="try-again">
             <a v-if="sentRequest" style="text-align: center;" href=".">Try an other URL!</a>
         </div>
     </div>
