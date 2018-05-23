@@ -108,6 +108,8 @@
                         return
                     }
 
+                    this.newURL.url = (this.newURL.url.indexOf('://') === -1) ? 'http://' + this.newURL.url : this.newURL.url;
+
                     // Post the new task to the /urls route using the $http client
                     this.$http.put('/urls', this.newURL).success(function (response) {
                         this.newURL.shorturl = response.created
